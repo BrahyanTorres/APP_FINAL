@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">app_tienda</string>
+    <string name="user">Usuario</string>
+    <string name="pass">Contraseña</string>
+    <string name="name_home">Brahyan Torres</string>
+</resources>
