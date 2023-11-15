@@ -6,112 +6,125 @@
     android:layout_height="match_parent">
 
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/logo_app"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="296dp"
-        android:layout_marginEnd="30dp"
         android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <TextView
-            android:id="@+id/txtBien"
+        <ImageView
+            android:id="@+id/imageView3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserratextrabold"
-            android:gravity="center"
-            android:text="BIENVENIDO "
-            android:textColor="@color/black"
-            android:textSize="35sp"
-            android:textStyle="bold" />
+            android:layout_height="300dp"
+            app:srcCompat="@drawable/logo_app" />
 
-        <TextView
-            android:id="@+id/txtSubTitulo"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montregular"
-            android:gravity="center"
-            android:text="INGRESA TU CUENTA"
-            android:textColor="@color/cafe_claro"
-            android:textSize="15sp"
-            android:textStyle="bold" />
+            android:layout_height="match_parent">
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="27dp" />
+            <ScrollView
+                android:id="@+id/scrollView3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent">
 
-        <EditText
-            android:id="@+id/txtUsuario"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/editext_backgraund"
-            android:contentDescription="@string/user"
-            android:fontFamily="@font/montregular"
-            android:hint="@string/user"
-            android:inputType="text|textPersonName"
-            android:paddingStart="18dp"
-            android:scrollbars="none" />
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:orientation="vertical">
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="22dp" />
+                    <TextView
+                        android:id="@+id/txtBien"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserratextrabold"
+                        android:gravity="center"
+                        android:text="BIENVENIDO "
+                        android:textColor="@color/black"
+                        android:textSize="35sp"
+                        android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/txtPassword"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/editext_backgraund"
-            android:fontFamily="@font/montregular"
-            android:foregroundTint="#000000"
-            android:hint="@string/pass"
-            android:inputType="text|textPassword"
-            android:paddingStart="18dp"
-            android:selectAllOnFocus="false"
-            android:singleLine="false" />
+                    <TextView
+                        android:id="@+id/txtSubTitulo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montregular"
+                        android:gravity="center"
+                        android:text="INGRESA TU CUENTA"
+                        android:textColor="@color/cafe_claro"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="23dp" />
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="27dp" />
 
-        <Button
-            android:id="@+id/btnLogin"
-            android:layout_width="match_parent"
-            android:layout_height="61dp"
-            android:layout_gravity="center"
-            android:background="@drawable/slayer"
-            android:fontFamily="@font/montserratextrabold"
-            android:gravity="center"
-            android:text="INICIAR"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
+                    <EditText
+                        android:id="@+id/txtUsuario"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/editext_backgraund"
+                        android:contentDescription="@string/user"
+                        android:fontFamily="@font/montregular"
+                        android:hint="@string/user"
+                        android:inputType="text|textPersonName"
+                        android:paddingStart="18dp"
+                        android:scrollbars="none" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="33dp" />
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Olvidaste la contraseña? "
-            android:textSize="15dp" />
+                    <EditText
+                        android:id="@+id/txtPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/editext_backgraund"
+                        android:fontFamily="@font/montregular"
+                        android:foregroundTint="#000000"
+                        android:hint="@string/pass"
+                        android:inputType="text|textPassword"
+                        android:paddingStart="18dp"
+                        android:selectAllOnFocus="false"
+                        android:singleLine="false" />
 
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="23dp" />
+
+                    <Button
+                        android:id="@+id/btnLogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="61dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/slayer"
+                        android:fontFamily="@font/montserratextrabold"
+                        android:gravity="center"
+                        android:text="INICIAR"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="33dp" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Olvidaste la contraseña? "
+                        android:textSize="15dp" />
+
+                </LinearLayout>
+            </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
