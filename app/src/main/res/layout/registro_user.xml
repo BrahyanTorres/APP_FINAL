@@ -9,16 +9,12 @@
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            app:srcCompat="@drawable/logo_app" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout2"
@@ -45,7 +41,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/montserratextrabold"
                         android:gravity="center"
-                        android:text="BIENVENIDO "
+                        android:text="REGÍSTRESE"
                         android:textColor="@color/black"
                         android:textSize="35sp"
                         android:textStyle="bold" />
@@ -56,7 +52,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/montregular"
                         android:gravity="center"
-                        android:text="INGRESA TU CUENTA"
+                        android:text="INGRESE SUS DATOS"
                         android:textColor="@color/cafe_claro"
                         android:textSize="15sp"
                         android:textStyle="bold" />
@@ -72,7 +68,23 @@
                         android:background="@drawable/editext_backgraund"
                         android:contentDescription="@string/user"
                         android:fontFamily="@font/montregular"
-                        android:hint="@string/user"
+                        android:hint="Nombre"
+                        android:inputType="text|textPersonName"
+                        android:paddingStart="18dp"
+                        android:scrollbars="none" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp" />
+
+                    <EditText
+                        android:id="@+id/inpCorreo"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/editext_backgraund"
+                        android:contentDescription="@string/user"
+                        android:fontFamily="@font/montregular"
+                        android:hint="Correo"
                         android:inputType="text|textPersonName"
                         android:paddingStart="18dp"
                         android:scrollbars="none" />
@@ -98,14 +110,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="23dp" />
 
-                    <TextView
-                        android:id="@+id/textView2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Olvidaste la contraseña? "
-                        android:textSize="15dp" />
-
                     <Space
                         android:layout_width="match_parent"
                         android:layout_height="22dp" />
@@ -116,25 +120,30 @@
                         android:layout_height="61dp"
                         android:layout_gravity="center"
                         android:background="@drawable/slayer"
-                        android:fontFamily="@font/montserratextrabold"
+                        android:fontFamily="@font/montregular"
+                        android:textStyle="bold"
                         android:gravity="center"
-                        android:text="INICIAR"
+                        android:text="Crear"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
                     <Space
                         android:layout_width="match_parent"
-                        android:layout_height="33dp" />
+                        android:layout_height="60dp" />
 
-                    <TextView
-                        android:id="@+id/txtRegistrar"
+                    <Button
+                        android:id="@+id/btnVolver"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserratextrabold"
+                        android:layout_height="61dp"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/montregular"
                         android:gravity="center"
-                        android:text="Registrarse"
-                        android:textColor="@color/cafe_claro"
-                        android:textSize="15dp" />
+                        android:backgroundTintMode="add"
+                        android:backgroundTint="@color/gris"
+                        
+                        android:text="Iniciar sesion"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
 
                 </LinearLayout>
             </ScrollView>

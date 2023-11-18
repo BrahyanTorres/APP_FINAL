@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,21 +14,30 @@ import com.brahyan.app_tienda.R;
 
 public class LoginActivity extends AppCompatActivity {
         private EditText user, contra;
+        private TextView reg;
         private Button login;
         private static final String USER = "admin";
         private static final String CON = "123";
-        private Object Toast;
 
-    @Override
+
+        @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.login);
 
 
-            user = findViewById(R.id.txtUsuario);
-            contra = findViewById(R.id.txtPassword);
-            login = findViewById(R.id.btnLogin);
+            user = findViewById(R.id.inpName);
+            contra = findViewById(R.id.inpContraseña);
+            login = findViewById(R.id.btnReg);
+            reg=findViewById(R.id.txtRegistrar);
 
+            reg.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(LoginActivity.this, Registrars.class);
+                    startActivity(intent);
+                }
+            });
             login.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -38,14 +48,13 @@ public class LoginActivity extends AppCompatActivity {
                     // Comparar con las credenciales correctas
                     if (us.equals(USER) && cont.equals(CON)) {
                         // Inicio de sesión exitoso
-                       //showToast("Inicio de sesión exitoso");
+
 
                         // Iniciar la actividad principal
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         startActivity(intent);
                     } else {
                         // Nombre de usuario o contraseña incorrectos
-                        //showToast("Error en los campos. Verifica tus credenciales.");
 
                         // Limpiar los campos
                         user.setText("");
