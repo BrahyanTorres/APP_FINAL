@@ -111,30 +111,35 @@
                         android:layout_height="22dp" />
 
                     <Button
-                        android:id="@+id/btnReg"
+                        android:id="@+id/btnLogin"
                         android:layout_width="match_parent"
                         android:layout_height="61dp"
                         android:layout_gravity="center"
-                        android:background="@drawable/slayer"
-                        android:fontFamily="@font/montserratextrabold"
+                        android:background="@drawable/boton_gris"
+                        android:fontFamily="@font/montregular"
                         android:gravity="center"
+                        android:includeFontPadding="true"
                         android:text="INICIAR"
                         android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                     <Space
                         android:layout_width="match_parent"
                         android:layout_height="33dp" />
 
-                    <TextView
-                        android:id="@+id/txtRegistrar"
+                    <Button
+                        android:id="@+id/btnRegis"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserratextrabold"
+                        android:layout_height="61dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/slayer"
+                        android:fontFamily="@font/montregular"
                         android:gravity="center"
-                        android:text="Registrarse"
-                        android:textColor="@color/cafe_claro"
-                        android:textSize="15dp" />
+                        android:text="REGISTRARSE"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
             </ScrollView>

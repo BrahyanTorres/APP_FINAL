@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,8 +12,8 @@ import com.brahyan.app_tienda.R;
 
 public class LoginActivity extends AppCompatActivity {
         private EditText user, contra;
-        private TextView reg;
-        private Button login;
+
+        private Button login, regis;
         private static final String USER = "admin";
         private static final String CON = "123";
 
@@ -28,10 +26,10 @@ public class LoginActivity extends AppCompatActivity {
 
             user = findViewById(R.id.inpName);
             contra = findViewById(R.id.inpContraseña);
-            login = findViewById(R.id.btnReg);
-            reg=findViewById(R.id.txtRegistrar);
+            login = findViewById(R.id.btnLogin);
+            regis=findViewById(R.id.btnRegis);
 
-            reg.setOnClickListener(new View.OnClickListener() {
+            regis.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(LoginActivity.this, Registrars.class);

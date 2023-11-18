@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -16,7 +15,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.Firebase;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -26,8 +24,8 @@ import java.util.Map;
 
 public class Registrars extends AppCompatActivity {
     private EditText name, contra, correo;
-    private TextView volver;
-    private Button btn_crear;
+
+    private Button btn_crear,btn_volver;
 
     FirebaseFirestore mFire;
     FirebaseAuth mAuth;
@@ -43,10 +41,10 @@ public class Registrars extends AppCompatActivity {
         name = findViewById(R.id.inpName);
         contra = findViewById(R.id.inpContraseña);
         correo= findViewById(R.id.inpCorreo);
-        btn_crear = findViewById(R.id.btnReg);
-        volver = findViewById(R.id.txtVolver);
+        btn_crear = findViewById(R.id.btnLogin);
+        btn_volver = findViewById(R.id.btnVolver);
 
-        volver.setOnClickListener(new View.OnClickListener() {
+        btn_volver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Registrars.this, LoginActivity.class);
