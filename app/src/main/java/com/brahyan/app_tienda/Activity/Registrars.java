@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Registrars extends AppCompatActivity {
-    private EditText name, contra, correo;
+    private EditText name, contra, core;
 
     private Button btn_crear,btn_volver;
 
@@ -35,12 +35,13 @@ public class Registrars extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.registro_user);
+
         mFire = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
 
         name = findViewById(R.id.inpName);
         contra = findViewById(R.id.inpContraseña);
-        correo= findViewById(R.id.inpCorreo);
+        core = findViewById(R.id.inpCorreo);
         btn_crear = findViewById(R.id.btnLogin);
         btn_volver = findViewById(R.id.btnVolver);
 
@@ -56,50 +57,42 @@ public class Registrars extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String nameUser= name.getText().toString().trim();
-                String correoUser= correo.getText().toString().trim();
+                String coreUser= core.getText().toString().trim();
                 String passUser= contra.getText().toString().trim();
 
-                if (nameUser.isEmpty() && correoUser.isEmpty() && passUser.isEmpty()){
+                if (nameUser.isEmpty() && coreUser.isEmpty() && passUser.isEmpty()){
                     Toast.makeText(Registrars.this,"Llene los campos", Toast.LENGTH_SHORT).show();
 
                 }else{
-                    registrarUser(nameUser,correoUser,passUser);
+                    registrarUser(nameUser,coreUser,passUser);
                 }
 
             }
         });
     }
 
-    private void registrarUser(String nameUser, String correoUser, String passUser) {
-        mAuth.createUserWithEmailAndPassword(correoUser,passUser).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+    private void registrarUser(String nameUser, String coreUser, String passUser) {
+        mAuth.createUserWithEmailAndPassword(coreUser,passUser).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 String id = mAuth.getCurrentUser().getUid();
                 Map<String,Object> map = new HashMap<>();
                 map.put("id",id);
-                map.put("nombre",nameUser);
-                map.put("correo",correoUser);
-                map.put("contraseña",passUser);
+                map.put("name",nameUser);
+                map.put("email",coreUser);
+                map.put("pass",passUser);
 
-                mFire.collection("user").document(id).set(map).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        finish();
-                        startActivity(new Intent( Registrars.this, LoginActivity.class));
-                        Toast.makeText(Registrars.this, "Usuario registrado con Exito!", Toast.LENGTH_SHORT).show();
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(Registrars.this, "Error al Guardar", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                startActivity(new Intent(Registrars.this, LoginActivity.class));
+                Toast.makeText(Registrars.this, "Usuario registrado con Exito!", Toast.LENGTH_SHORT).show();
+                finish();
+
+
 
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(Registrars.this, "Error al registrarse", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Registrars.this, "Error al registrarse", Toast.LENGTH_SHORT).show();
             }
         });
 

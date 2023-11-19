@@ -9,29 +9,34 @@
     android:elevation="3dp">
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imgView_detail"
+                android:id="@+id/pic1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/view"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.533"
                 app:srcCompat="@drawable/silla_pop"
-                tools:layout_editor_absoluteY="-27dp" />
+                tools:layout_editor_absoluteX="-34dp" />
 
             <View
                 android:id="@+id/view"
                 android:layout_width="160dp"
                 android:layout_height="70dp"
                 android:background="@drawable/blanco_backgraund"
-                tools:layout_editor_absoluteX="8dp"
-                tools:layout_editor_absoluteY="107dp" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.961"
+                tools:layout_editor_absoluteX="7dp" />
 
             <TextView
                 android:id="@+id/preciotxt"
@@ -50,16 +55,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
-                app:layout_constraintTop_toTopOf="@+id/view"
-                tools:layout_editor_absoluteX="27dp" />
+                app:layout_constraintEnd_toEndOf="@+id/view"
+                app:layout_constraintHorizontal_bias="0.088"
+                app:layout_constraintStart_toStartOf="@+id/view"
+                app:layout_constraintTop_toTopOf="@+id/view" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -68,7 +68,7 @@ public class ListAdapters extends RecyclerView.Adapter<ListAdapters.Viewholder> 
 
             titletxt=itemView.findViewById(R.id.titletxt);
             preciotxt=itemView.findViewById(R.id.preciotxt);
-            img=itemView.findViewById(R.id.imgView_detail);
+            img=itemView.findViewById(R.id.pic1);
         }
     }
 }
